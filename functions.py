@@ -1,4 +1,4 @@
-#FUNCTIONS
+d#FUNCTIONS
 
 #without using functions
 
@@ -170,42 +170,218 @@ splitbill()'''
 
 
 #using multiple def keywords
-def add():
-    a=int(input("Enter a:"))
-    b=int(input("Enter b:"))
-    
-    opts=int(input("1.add,2.sub,3.mul"))
-    if opts==1:
-        print("The Sum is:",a+b)
-    elif opts==2:
-        print("The Diff is:",a-b)
-    else:
-        print("The Mul is:",a*b)
+'''def add():
+    print("The Sum is:",a+b)
 def sub():
-    a=int(input("Enter a:"))
-    
-    opts=int(input("1.add,2.sub,3.mul"))
-    if opts==1:
-        print("The Sum is:",a+b)
-    elif opts==2:
-        print("The Diff is:",a-b)
-    else:
-        print("The Mul is:",a*b)
-    b=int(input("Enter b:"))
-def mul():
+    print("The Diff is:",a-b)   
+def mul():   
+    print("The Mul is:",a*b)
+while True:
     a=int(input("Enter a:"))
     b=int(input("Enter b:"))
-    
-    opts=int(input("1.add,2.sub,3.mul"))
+    opts=int(input("1.add 2.sub 3.mul"))
     if opts==1:
-        print("The Sum is:",a+b)
+        add()
     elif opts==2:
-        print("The Diff is:",a-b)
-    else:
-        print("The Mul is:",a*b)
-add()
-sub()
-mul()
+        sub()
+    elif opts==3:
+        mul()'''
+
+
+#----------------------------------------------------------------------
+#keyword and positional arguments
+
+'''def Details(id,name,mailid):
+    id=10
+    name="poojitha"
+    mailid="poojitha@gmail.com"
+    print(id,name,mailid)
+Details(id="id",name="name",mailid="mailid") #givig keywords same as arguments'''
+
+
+'''def Details(id,name,mailid):
+    print(id,name,mailid)
+Details(id="id",name="name",mailid="mailid")
+Details(id="20",name="varshi",mailid="v@gmail.com")  #givig values same as arguments with keywords
+Details(30,"tara","t@gmail.com")        #givig values same as arguments
+Details("s@gmail.com",40,"sai")         #givig values not same as arguments & it will not print same as arguments
+Details(mailid="c@gmail.com",id=50,name="chaitra")''' #givig values not same as arguments but with keywords & in different postions &it will print correct order
+
+#-------------------------------------------------------------------------
+
+#default arguments
+
+'''def Grocery(item,price):
+    print("Item is: %s" %item)
+    print("Price is: %.2f" %price)
+Grocery("sugar",100)'''  #giving values in the calling function
+
+
+'''def Grocery(item="rice",price=1500):  #giving values at the function
+    print("Item is: %s" %item)
+    print("Price is: %.2f" %price)
+Grocery()'''      
+
+
+
+'''def Grocery(item,price=200):   #for first arg value is not giving in the function
+    print("Item is: %s" %item)
+    print("Price is: %.2f" %price)
+Grocery("ghee")'''
+
+
+
+'''def Grocery(item="dhal",price):
+    #non def arg follows def args
+    print("Item is: %s" %item)
+    print("Price is: %.2f" %price)
+Grocery(100)''' #it will raise error because for the first arg we given the value but for the second arg not given the value
+
+#------------------------------------------------------
+
+#Task
+
+'''def Cake(name,price,qty):
+    print("Cake name is:%s" %name)
+    print("Price is:%d" %price)
+    print("Quantity is:%dKg" %qty)
+Cake("venela",500,1)'''
+
+
+'''def Cake(name="chocolate",price=700,qty=2):
+    print("Cake name is:%s" %name)
+    print("Price is:%d" %price)
+    print("Quantity is:%dKg" %qty)
+Cake()'''
+
+'''def Cake(name,price,qty=1):
+    print("Cake name is:%s" %name)
+    print("Price is:%d" %price)
+    print("Quantity is:%dKg" %qty)
+Cake("redvlvet",600)'''#without giving the value for first,second args & for giving remaining agrs it will accept
+
+
+'''def Cake(name,price=1000,qty=2):
+    print("Cake name is:%s" %name)
+    print("Price is:%d" %price)
+    print("Quantity is:%dKg" %qty)
+Cake("pineapple")''' #without giving the value for first arg & for giving remaining agrs it will accept
+
+
+'''def Cake(name="mango",price,qty):
+    print("Cake name is:%s" %name)
+    print("Price is:%d" %price)
+    print("Quantity is:%dKg" %qty)
+Cake(900,2) '''   #Error because if we give value to first arg the we need to give the values for remaining args also, otherwise it will raise error.
+
+#----------------------------------------------------------
+
+#(*)argument--->it is used to unpack the data
+
+#list
+'''a=[2,3,4,5,6,7]
+print(a)
+print(*a)'''
+
+#tuple
+'''a=(2,3,4,5,6,7)
+print(a)
+print(*a)'''
+
+#set
+'''a={2,3,4,5,6,7}
+print(a)
+print(*a)'''
+
+#dict
+'''a={"name":"poojitha","city":"vij"}
+print(a)
+print(*a)''' #it will return only keys
+
+
+
+'''a,b,c=3,4,5
+print(a)
+print(b)
+print(c)'''
+
+
+'''a,b,c=2,3,4,5,6,8
+print(a)
+print(b)
+print(c)'''#Error
+
+
+
+#by using (*)arg it is possible
+'''*a,b,c=2,3,4,5,6,8
+print(*a)     #a=2 to 5
+print(b)      #b=6
+print(c)      #c=8
+
+
+a,*b,c=2,3,4,5,6,8
+print(a)
+print(*b)
+print(c)   #it will give first value to 'a' and last value to 'c' &ramaining all values to 'b'
+
+a,b,*c=2,3,4,5,6,8
+print(a)
+print(b)
+print(*c)'''
+
+#two starts(*) not possible
+
+#strings
+
+'''b="python"
+print(b)
+print(*b)'''
+
+
+'''a,b,c="codegnan"
+print(a)
+print(b)
+print(c) '''#error
+
+
+'''a,b,c="cod"
+print(a)
+print(b)
+print(c)'''
+
+#using (*)arg for strings
+
+
+'''*a,b,c="codegnan"
+print(*a)
+print(b)
+print(c)
+
+a,*b,c="codegnan"
+print(a)
+print(*b)
+print(c)
+
+a,b,*c="codegnan"
+print(a)
+print(b)
+print(*c)'''
+
+#---------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
